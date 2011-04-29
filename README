@@ -1,0 +1,9 @@
+FSCdrQueue solves a common problem for FreeSWITCH CDR processing. In optimal conditions, you want the CDRs to flow from FreeSWITCH memory to the target database without additional disk IO. However, in cases where the database is temporarily unavailable, you must queue the CDRs to disk, then commit them when possible. 
+
+FSCdrQueue listens on a local HTTP port so that FreeSWITCH can use mod_xml_curl to send the CDRs locally. It then tries to connect drop the CDR off into the database. If it fails, it queues to a local directory (the same way mod_xml_curl does). When a connection is re-established, FSCdrQueue will empty the on-disk queue, ensuring all files eventually end up in the database.
+
+As XML CDRs can be quite large, FSCdrQueue uses QuickLZ to compress the CDRs first. (Perhaps this should be replaced with Google's Snappy). The database supported right now is SQL Server, but it should be trivial to change it. It also has a dependency on log4net.
+
+While this doesn't solve all the issues of FreeSWITCH CDR processing, it at least provides an efficient and robust delivery system of the CDRs, which FreeSWITCH otherwise lacks.
+
+I've had FSCdrQueue in production and handled millions of CDRs without issue. FSCdrQueue is licensed under the GPLv2.

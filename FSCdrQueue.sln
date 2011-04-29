@@ -1,0 +1,19 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FSCdrQueue", "FSCdrQueue.fsproj", "{B40C4777-0E1D-4C1C-8926-8E466100C1A8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B40C4777-0E1D-4C1C-8926-8E466100C1A8}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B40C4777-0E1D-4C1C-8926-8E466100C1A8}.Debug|x86.Build.0 = Debug|Any CPU
+		{B40C4777-0E1D-4C1C-8926-8E466100C1A8}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
